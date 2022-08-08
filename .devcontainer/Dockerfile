@@ -1,0 +1,1 @@
+FROM linkuistics/nix-devcontainer:v1

@@ -1,0 +1,27 @@
+{
+    "name": "devcontainer-project",
+    "dockerFile": "Dockerfile",
+    "context": "${localWorkspaceFolder}",
+    "build": {
+        "args": {
+            "USER_UID": "${localEnv:USER_UID}",
+            "USER_GID": "${localEnv:USER_GID}"
+        }
+    },
+    "runArgs": [
+        "--security-opt",
+        "label=disable"
+    ],
+    "containerEnv": {
+        "PRELOAD_EXTENSIONS": "arrterian.nix-env-selector"
+    },
+    "overrideCommand": false,
+    "updateRemoteUserUID": false,
+    "extensions": [
+        "arrterian.nix-env-selector",
+        "jnoortheen.nix-ide",
+        "eamodio.gitlens",
+        "github.vscode-pull-request-github",
+        "mhutchie.git-graph"
+    ]
+}
